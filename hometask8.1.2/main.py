@@ -5,11 +5,14 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 def decorator1(func):
-    def dec():
+    def dec(n: list):
         start_time = time.time()
-        func(numbers)
+        func(n)
         print(time.time() - start_time, "seconds")
-    return dec()
+        return func(n)
+    return dec
+
+
 
 
 @decorator1
